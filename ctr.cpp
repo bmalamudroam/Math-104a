@@ -34,7 +34,8 @@ int main()
 }
 double f_x(double x_param)
 {
-  return (x_param); //whatever we want f(x) to be will replace (x_param)
+  return (x_param);
+	    //whatever we want f(x) to be will replace (x_param)
             //ex. replace (x_param) with cos(x_param)
 }
 double T_x(int N_param, double h_param, double a_param, double b_param)
@@ -42,7 +43,7 @@ double T_x(int N_param, double h_param, double a_param, double b_param)
   double ctr=.5*h_param*(f_x(a_param)+f_x(b_param));
   for (int count = 1; count < N_param; count++)
     {
-      ctr += f_x(a_param+(count*h_param));
+      ctr += (h_param * f_x(a_param+(count*h_param)));
     }
   return ctr;
 }
