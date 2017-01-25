@@ -42,7 +42,7 @@ double T_x(int N_param, double h_param, double a_param, double b_param)
   double ctr=.5*h_param*(f_x(a_param)+f_x(b_param));
   for (int count = 1; count < N_param; count++)
     {
-      ctr += f_x(a_param+(count*h_param));
+      ctr += (h_param * f_x(a_param+(count*h_param)));
     }
   return ctr;
 }
